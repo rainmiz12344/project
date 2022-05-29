@@ -2,10 +2,13 @@ $colorTitle: #2D3033;
 $colorText: #6C7279;
 $colorBorder: #fff;
 $colorBorderBottom: #BABBC5;
+$colorBorderBottomActive: rgba(255, 67, 67, 0.8);
 $colorTextLink: #fff;
+$colorTextLinkActive: rgba(231, 20, 20, 1);
 $colorBackgroundActive: rgba(185, 12, 12, 0.8);
 $colorBackgroundHover: rgba(255, 67, 67, 0.8);
 $colorBackgroundTestimonials: rgba(92, 50, 73, 1);
+$colorTestimonialsSwiper: rgba(126, 93, 111, 1);
 $colorTextWhite: #fff;
 $colorTextBlack: #000;
 $colorBackgroundBtn: #ff4343;
@@ -14,6 +17,7 @@ $colorBackgroundFooterLight: #353c65;
 $colorBackgroundFooterDark: #2c3154;
 $colorTextFooter: #808080;
 $colorBackgroundBanner: #252b49cc;
+$colorTransparent: transparent;
 * {
     margin: 0;
     padding: 0;
@@ -51,15 +55,78 @@ $colorBackgroundBanner: #252b49cc;
         padding: 0;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid $colorBorderBottom;
+        position: relative;
+
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            border-bottom: 1px solid $colorBorderBottom;
+            width: 100%;
+
+            @media (max-width: 320px) {
+                border-bottom: 1px solid $colorTransparent;
+            }
+        }
     }
 
     &__logo {
         display: inline-block;
+
+        @media (max-width: 320px) {
+            width: 103.5px;
+            height: 14.4px;
+        }
+    }
+    &__logotype {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+
+        @media (max-width: 320px) {
+            width: 103.5px;
+            height: 14.4px;
+        }
     }
 
+    &__menu {
+        background-color: $colorTransparent;
+        border: none;
+        display: none;
+        cursor: pointer;
+        transition: all 0.3s linear;
+        &:hover {
+            background-color: $colorBackgroundHover;
+            box-shadow: 4px 4px 30px $colorBackgroundHover;
+        }
+
+        &:active {
+            background-color: $colorBackgroundActive;
+            box-shadow: 4px 4px 30px $colorBackgroundActive;
+        }
+        @media (max-width: 768px) {
+            display: inline-block;
+            margin: 19px 0;
+        }
+
+    }
+    &__btn {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        height: 56px;
+        width: 55px;
+    }
     &__navigation {
         display: flex;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
     &__item {
         display: inline-block;
@@ -81,6 +148,17 @@ $colorBackgroundBanner: #252b49cc;
             border-bottom: 30px solid $colorBorderBottom;
             padding-bottom: 13px;
         }
+
+        &:active {
+            border-bottom: 30px solid $colorBorderBottomActive;
+            color: $colorBorderBottomActive;
+            padding-bottom: 13px;
+        }
+        @media (max-width: 1024px) {
+            min-width: 112px;
+            font-size: 12px;
+            line-height: 14px;
+        }
     }
 }
 
@@ -94,6 +172,12 @@ $colorBackgroundBanner: #252b49cc;
     z-index:1;
     padding: 230px 0 120px;
 
+    @media (max-width: 1024px) {
+        padding: 257px 0 126px;
+    }
+    @media (max-width: 320px) {
+        padding: 108px 0 52px;
+    }
     &::after {
         content: '';
         display: block;
@@ -110,6 +194,10 @@ $colorBackgroundBanner: #252b49cc;
         z-index: 2;
         @include container();
         text-align: center;
+
+        @media (max-width: 320px) {
+            max-width: 280px;
+        }
     }
 
     &__title {
@@ -118,6 +206,19 @@ $colorBackgroundBanner: #252b49cc;
         line-height: 75px;
         color: $colorTextWhite;
         margin-bottom: 31px;
+
+        @media (max-width: 1024px) {
+            font-size: 48px;
+            line-height: 57px;
+            margin-bottom: 61px;
+        }
+
+        @media (max-width: 320px) {
+            font-size: 36px;
+            line-height: 43px;
+            margin-bottom: 32px;
+        }
+        
     }
 
     &__text {
@@ -127,6 +228,18 @@ $colorBackgroundBanner: #252b49cc;
         line-height: 29px;
         color: $colorTextWhite;
         margin:0 auto 79px;
+
+        @media (max-width: 1024px) {
+            max-width: 750px;
+            font-size: 18px;
+            line-height: 22px;
+            margin:0 auto 91px;
+        }
+        @media (max-width: 320px) {
+            font-size: 14px;
+            line-height: 17px;
+            margin: 0 auto 49px;
+        }
     }
 
     &__btn {
@@ -141,7 +254,18 @@ $colorBackgroundBanner: #252b49cc;
         color: $colorTextWhite;
         border: none;
         transition: all 0.3s linear;
+        cursor: pointer;
 
+        @media (max-width: 1024px) {
+            max-width: 314px;
+        }
+
+        @media (max-width: 320px) {
+            max-width: 280px;
+            font-size: 24px;
+            line-height: 28px;
+            padding: 16px;
+        }
         &:hover {
             background-color: $colorBackgroundBtnHover;
         }
@@ -170,6 +294,9 @@ $colorBackgroundBanner: #252b49cc;
         @media (max-width: 1024px) {
             column-gap: 20px;
             row-gap: 50px;
+        }
+        @media (max-width: 410px) {
+            grid-template-columns: 1fr 1fr;
         }
         @media (max-width:320px) {
             grid-template-columns: 1fr;
@@ -248,7 +375,7 @@ $colorBackgroundBanner: #252b49cc;
             display: block;
         }
         &:hover {
-            transform: rotate(360deg);
+            transform: rotate(360deg) scale(0.8);
         }
         &:active {
             transform: scale(0.5);
@@ -262,16 +389,6 @@ $colorBackgroundBanner: #252b49cc;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        z-index: 3;
-
-        &:hover {
-            z-index: 1;
-        }
-
-        &:active {
-            z-index: 0;
-        }
-
     }
 
     &__item {
@@ -285,9 +402,12 @@ $colorBackgroundBanner: #252b49cc;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        z-index: 2;
         background: $colorBackgroundHover;
-
+        opacity: 0;
+        transition: all 0.3s linear;
+        &:hover{
+            opacity: 1;
+        }
         &:active {
             background: $colorBackgroundActive;
         }
@@ -335,16 +455,35 @@ $colorBackgroundBanner: #252b49cc;
 
 .team {
     padding: 114px 0;
+    @media (max-width: 1024px) {
+        padding: 78px 0;
+    }
+
+    @media (max-width: 320px) {
+        padding: 35px 0 34.5px;
+    }
+
     &__container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 15px;
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         column-gap: 30px;
+
+        @media (max-width: 1024px) {
+            column-gap: 25px;
+        }
+        @media (max-width: 540px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 320px) {
+            grid-template-columns: 1fr;
+            row-gap: 56px;
+        }
     }
 
     &__card {
-        max-width: 270px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -352,17 +491,33 @@ $colorBackgroundBanner: #252b49cc;
     }
 
     &__image {
-        max-width: 270px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        position: relative;
         margin-bottom: 30px;
+
+        &::before {
+            content: "";
+            display: block;
+            padding-top: 100%;
+
+            @media (max-width: 320px) {
+                padding-top: 81%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            margin-bottom: 25px;
+        }
+
     }
+
 
     &__image-face {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
     }
 
     &__name {
@@ -372,6 +527,12 @@ $colorBackgroundBanner: #252b49cc;
         text-transform: capitalize;
         color: #2D3033;
         margin-bottom: 5px;
+
+        @media (max-width: 1024px) {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
     }
 
     &__job {
@@ -381,6 +542,16 @@ $colorBackgroundBanner: #252b49cc;
         text-transform: uppercase;
         color: #FF4343;
         margin-bottom: 18px;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 17px;
+            margin-bottom: 22px;
+        }
+
+        @media (max-width: 320px) {
+            margin-bottom: 41px;
+        }
     }
 
     &__text {
@@ -391,6 +562,16 @@ $colorBackgroundBanner: #252b49cc;
         margin-bottom: 38px;
         display: flex;
         flex: 1 1 auto;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 39px;
+        }
+
+        @media (max-width: 320px) {
+            margin-bottom: 55px;
+        }
     }
 
     &__socials {
@@ -398,7 +579,11 @@ $colorBackgroundBanner: #252b49cc;
         column-gap: 6px;
         flex-direction: row;
         align-items: center;
-        margin-top: auto;
+        
+
+        @media (max-width:1024px) {
+            column-gap: 5px;
+        }
     }
     &__link {
         width: 39px;
@@ -407,37 +592,124 @@ $colorBackgroundBanner: #252b49cc;
         justify-content: center;
         align-items: center;
 
-    
+        @media (max-width:1024px) {
+            width: 33px;
+            height: 33px;
+        }
+
+        @media (max-width:320px) {
+            width: 39.6px;
+            height: 39.6px;
+        }
     }
     &__icon {
+        transition: all 0.3s linear;
         &:hover path {
             fill: $colorText;
         }
         &:hover rect {
             stroke: $colorText;
         }
+
+        &:active path {
+            fill: $colorTextBlack;
+        }
+        &:active rect {
+            stroke: $colorTextBlack;
+        }
+        @media (max-width:1024px) {
+            width: 33px;
+            height: 33px;
+        }
+
+        @media (max-width:320px) {
+            width: 39.6px;
+            height: 39.6px;
+        }
     }
 }
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 12.5px;
 
+    @media (max-width: 320px) {
+        margin: 0 10.5px;
+    }
+}
+.swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    background-color: $colorTransparent;
+    border: 1px solid $colorTestimonialsSwiper;
+    &-active {
+        background-color: $colorTestimonialsSwiper;
+    }
+
+    @media (max-width: 1024px) {
+        width: 9.5px;
+        height: 9.5px;
+    }
+}
 .testimonials {
-    display: flex;
-    background-color: $colorBackgroundTestimonials;
+    &__swiper {
+        padding-bottom: 55px;
+
+        @media (max-width: 1024px) {
+            padding-bottom: 43.5px;
+        }
+
+        @media (max-width: 1024px) {
+            padding-bottom: 42.5px;
+        }
+    }
+    &__group {
+        display: flex;
+
+        @media (max-width: 530px) {
+            flex-direction: column;
+        }
+    }
     &__image {
+        position: relative;
         max-width: 49%;
-        width: 100%;
+        width: 100%; 
+
+        @media (max-width: 530px) {
+            max-width: 100%;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            padding-top: 66%;
+        }
     }
     &__photo {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     &__block {
+        background-color: $colorBackgroundTestimonials;
         max-width: 51%;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 20px 129px;
+
+        @media (max-width: 1024px) {
+            justify-content: stretch;
+            padding: 47px 88px;
+        }
+        @media (max-width: 530px) {
+            max-width: 100%;
+        }
+        @media (max-width: 320px) {
+            padding: 15px 25px 95px 20px;
+        }
     }
     &__text {
         font-family: 'Cardo', serif;
@@ -448,6 +720,19 @@ $colorBackgroundBanner: #252b49cc;
         text-transform: capitalize;
         color: $colorTextWhite;
         margin-bottom: 39px;
+
+        @media (max-width: 1024px) {
+            max-width: 330px;
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 22px;
+        }
+
+        @media (max-width: 320px) {
+            max-width: 275px;
+            text-align: center;
+            margin-bottom: 37px;
+        }
     }
     &__name {
         max-width: 470px;
@@ -456,11 +741,25 @@ $colorBackgroundBanner: #252b49cc;
         line-height: 15px;
         text-transform: uppercase;
         color: $colorTextWhite;
+
+        @media (max-width: 1024px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
     }
 }
 
 .download {
     padding: 114px 0;
+
+    @media (max-width: 1024px) {
+        padding: 78px 0;
+    }
+
+    @media (max-width: 320px) {
+        padding: 35px 0;
+    }
+
     &__container {
         @include container();
         text-align: center;
@@ -471,6 +770,17 @@ $colorBackgroundBanner: #252b49cc;
         line-height: 35px;
         color: $colorTextBlack;
         margin-bottom: 31px;
+
+        @media (max-width: 1024px) {
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 26px;
+        }
+
+        @media (max-width: 320px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
     }
     &__text {
         font-weight: 700;
@@ -478,11 +788,24 @@ $colorBackgroundBanner: #252b49cc;
         line-height: 21px;
         color: $colorTextBlack;
         margin-bottom: 48px;
+        text-transform: uppercase;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 46px;
+        }
+
+        @media (max-width: 320px) {
+            font-size: 13px;
+            line-height: 15px;
+            margin-bottom: 15px;
+        }
     }
     &__btn {
         max-width: 370px;
         width: 100%;
-        padding: 26px;
+        padding: 25px;
         font-weight: 900;
         font-size: 24px;
         line-height: 28px;
@@ -500,6 +823,17 @@ $colorBackgroundBanner: #252b49cc;
             background: $colorBackgroundBtn;
             box-shadow: 4px 4px 30px $colorBackgroundBtn;
         }   
+
+        @media (max-width: 1024px) {
+            max-width: 314px;
+            font-size: 18px;
+            line-height: 22px;
+            padding: 29px;
+        }
+
+        @media (max-width: 320px) {
+            max-width: 279px;
+        }
     }
 }
 
@@ -507,18 +841,46 @@ $colorBackgroundBanner: #252b49cc;
     &__top {
         padding: 71px 0;
         background-color: $colorBackgroundFooterLight;
+
+        @media (max-width: 1024px) {
+            padding: 46px 0 43px;
+        }
+
+        @media (max-width: 320px) {
+            padding: 34px 0;
+        }
     }
     &__top-container {
         @include container();
         display: flex;
         column-gap: 30px;
         justify-content: space-between;
+
+        @media (max-width: 1024px) {
+            column-gap: 20px;
+        }
+
+        @media (max-width: 320px) {
+            flex-direction: column;
+            row-gap: 59px;
+        }
     }
     &__info {
         max-width: 370px;
         width: 100%;
         text-align: center;
 
+        @media (max-width: 1024px) {
+            max-width: 315px;
+        }
+
+        @media (max-width: 320px) {
+            max-width: 280px;
+
+            &:nth-of-type(1) {
+                margin-bottom: 10px;
+            }
+        }
     }
     &__title {
         font-weight: 700;
@@ -527,6 +889,28 @@ $colorBackgroundBanner: #252b49cc;
         text-transform: uppercase;
         color: $colorTextWhite;
         margin-bottom: 29px;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 17px;
+            margin-bottom: 17px;
+        }
+
+        @media (max-width: 320px) {
+            margin-bottom: 34px;
+        }
+
+        &_links {
+            margin-bottom: 48px;
+    
+            @media (max-width: 1024px) {
+                margin-bottom: 32px;
+            }
+
+            @media (max-width: 320px) {
+                margin-bottom: 36px;
+            }
+        }
     }
     &__text {
         font-weight: 400;
@@ -534,33 +918,82 @@ $colorBackgroundBanner: #252b49cc;
         line-height: 21px;
         text-transform: capitalize;
         color: $colorTextWhite;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
     &__links {
         display: flex;
         column-gap: 27px;
         max-width: 170px;
         margin: 0 auto;
+
+        @media (max-width: 1024px) {
+            max-width: 145px;
+            column-gap: 23px;
+        }
+
+        @media (max-width: 1024px) {
+            max-width: 132px;
+            column-gap: 17px;
+        }
     }
     &__link {
         display: inline-block;
         width: 39px;
         height: 39px;
+
+        @media (max-width: 1024px) {
+            width: 33px;
+            height: 33px;
+        }
     }
     &__icon {
+        transition: all 0.3s linear;
+    
+        @media (max-width: 1024px) {
+            width: 33px;
+            height: 33px;
+        }
+
         &:hover path {
             fill: $colorText;
         }
         &:hover rect {
             stroke: $colorText;
         }
+        &:active path {
+            fill: $colorTextBlack;
+        }
+        &:active rect {
+            stroke: $colorTextBlack;
+        }
     }
     &__bottom {
         padding: 24px 0;
         background-color: $colorBackgroundFooterDark;
+
+        @media (max-width: 1024px) {
+            padding: 14px 0;
+        }
+
+        @media (max-width: 320px) {
+            padding: 29px 0;
+        }
     }
     &__bottom-container {
         @include container();
         max-width: 400px;
+
+        @media (max-width: 1024px) {
+            max-width: 314px;
+        }
+
+        @media (max-width: 320px) {
+            max-width: 280px;
+        }
     }
     &__bottom-text {
         font-weight: 400;
@@ -569,8 +1002,22 @@ $colorBackgroundBanner: #252b49cc;
         text-align: center;
         text-transform: capitalize;
         color: $colorTextFooter;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
     &__bottom-name {
+        cursor: pointer;
         color: $colorTextWhite;
+        transition: all 0.3s linear;
+        &:hover {
+            color: $colorTextBlack;
+        }
+
+        &:active {
+            color: $colorTextLinkActive;
+        }
     }
 }

@@ -18,6 +18,9 @@ $colorBackgroundFooterDark: #2c3154;
 $colorTextFooter: #808080;
 $colorBackgroundBanner: #252b49cc;
 $colorTransparent: transparent;
+$colorLink: rgba(198, 203, 205, 1);
+
+
 * {
     margin: 0;
     padding: 0;
@@ -66,7 +69,7 @@ $colorTransparent: transparent;
             border-bottom: 1px solid $colorBorderBottom;
             width: 100%;
 
-            @media (max-width: 320px) {
+            @media (max-width: 375px) {
                 border-bottom: 1px solid $colorTransparent;
             }
         }
@@ -75,7 +78,7 @@ $colorTransparent: transparent;
     &__logo {
         display: inline-block;
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             width: 103.5px;
             height: 14.4px;
         }
@@ -86,7 +89,7 @@ $colorTransparent: transparent;
         object-fit: cover;
         pointer-events: none;
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             width: 103.5px;
             height: 14.4px;
         }
@@ -175,7 +178,7 @@ $colorTransparent: transparent;
     @media (max-width: 1024px) {
         padding: 257px 0 126px;
     }
-    @media (max-width: 320px) {
+    @media (max-width: 375px) {
         padding: 108px 0 52px;
     }
     &::after {
@@ -195,7 +198,7 @@ $colorTransparent: transparent;
         @include container();
         text-align: center;
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             max-width: 280px;
         }
     }
@@ -213,7 +216,7 @@ $colorTransparent: transparent;
             margin-bottom: 61px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             font-size: 36px;
             line-height: 43px;
             margin-bottom: 32px;
@@ -235,7 +238,7 @@ $colorTransparent: transparent;
             line-height: 22px;
             margin:0 auto 91px;
         }
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             font-size: 14px;
             line-height: 17px;
             margin: 0 auto 49px;
@@ -260,7 +263,7 @@ $colorTransparent: transparent;
             max-width: 314px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             max-width: 280px;
             font-size: 24px;
             line-height: 28px;
@@ -281,7 +284,7 @@ $colorTransparent: transparent;
     @media (max-width: 1024px) {
         padding: 78px 0;
     }
-    @media (max-width:320px) {
+    @media (max-width:375px) {
         padding: 40px 0 35px;
     }
 
@@ -298,7 +301,7 @@ $colorTransparent: transparent;
         @media (max-width: 410px) {
             grid-template-columns: 1fr 1fr;
         }
-        @media (max-width:320px) {
+        @media (max-width:375px) {
             grid-template-columns: 1fr;
             row-gap: 41px;
         }
@@ -317,7 +320,7 @@ $colorTransparent: transparent;
             margin-bottom: 47px;
         }
 
-        @media (max-width:320px) {
+        @media (max-width: 375px) {
             width: 75.75px;
             height: 75.75px;
             margin-bottom: 40px;
@@ -336,7 +339,7 @@ $colorTransparent: transparent;
             @include feature-title() 
         }
 
-        @media (max-width:320px) {
+        @media (max-width: 375px) {
             margin-bottom: 11px;
             @include feature-title() 
         }
@@ -351,7 +354,7 @@ $colorTransparent: transparent;
             @include feature-text();
         }
 
-        @media (max-width:320px) {
+        @media (max-width: 375px) {
             @include feature-text();
         }
     }
@@ -426,7 +429,7 @@ $colorTransparent: transparent;
             margin-bottom: 23px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             font-size: 18px;
             line-height: 21px;
             margin-bottom: 9px;
@@ -442,13 +445,13 @@ $colorTransparent: transparent;
             line-height: 16px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             font-size: 14px;
             line-height: 16px;
         }
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 375px) {
         grid-template-columns: 1fr 1fr;
     }
 } 
@@ -459,7 +462,7 @@ $colorTransparent: transparent;
         padding: 78px 0;
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 375px) {
         padding: 35px 0 34.5px;
     }
 
@@ -476,8 +479,9 @@ $colorTransparent: transparent;
         }
         @media (max-width: 540px) {
             grid-template-columns: 1fr 1fr;
+            row-gap: 56px;
         }
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             grid-template-columns: 1fr;
             row-gap: 56px;
         }
@@ -499,7 +503,7 @@ $colorTransparent: transparent;
             display: block;
             padding-top: 100%;
 
-            @media (max-width: 320px) {
+            @media (max-width: 375px) {
                 padding-top: 81%;
             }
         }
@@ -549,7 +553,7 @@ $colorTransparent: transparent;
             margin-bottom: 22px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             margin-bottom: 41px;
         }
     }
@@ -569,7 +573,7 @@ $colorTransparent: transparent;
             margin-bottom: 39px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             margin-bottom: 55px;
         }
     }
@@ -597,13 +601,19 @@ $colorTransparent: transparent;
             height: 33px;
         }
 
-        @media (max-width:320px) {
+        @media (max-width:375px) {
             width: 39.6px;
             height: 39.6px;
         }
     }
     &__icon {
-        transition: all 0.3s linear;
+        path {
+            transition: all 0.3s linear;
+        }
+        rect {
+            transition: all 0.3s linear;
+        }
+
         &:hover path {
             fill: $colorText;
         }
@@ -617,12 +627,12 @@ $colorTransparent: transparent;
         &:active rect {
             stroke: $colorTextBlack;
         }
-        @media (max-width:1024px) {
+        @media (max-width: 1024px) {
             width: 33px;
             height: 33px;
         }
 
-        @media (max-width:320px) {
+        @media (max-width: 375px) {
             width: 39.6px;
             height: 39.6px;
         }
@@ -631,7 +641,7 @@ $colorTransparent: transparent;
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 12.5px;
 
-    @media (max-width: 320px) {
+    @media (max-width: 375px) {
         margin: 0 10.5px;
     }
 }
@@ -657,7 +667,7 @@ $colorTransparent: transparent;
             padding-bottom: 43.5px;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 375px) {
             padding-bottom: 42.5px;
         }
     }
@@ -707,13 +717,12 @@ $colorTransparent: transparent;
         @media (max-width: 530px) {
             max-width: 100%;
         }
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             padding: 15px 25px 95px 20px;
         }
     }
     &__text {
         font-family: 'Cardo', serif;
-        max-width: 470px;
         font-weight: 400;
         font-size: 36px;
         line-height: 49px;
@@ -722,20 +731,17 @@ $colorTransparent: transparent;
         margin-bottom: 39px;
 
         @media (max-width: 1024px) {
-            max-width: 330px;
             font-size: 24px;
             line-height: 32px;
             margin-bottom: 22px;
         }
 
-        @media (max-width: 320px) {
-            max-width: 275px;
+        @media (max-width: 375px) {
             text-align: center;
             margin-bottom: 37px;
         }
     }
     &__name {
-        max-width: 470px;
         font-weight: 700;
         font-size: 13px;
         line-height: 15px;
@@ -745,6 +751,10 @@ $colorTransparent: transparent;
         @media (max-width: 1024px) {
             font-size: 12px;
             line-height: 14px;
+        }
+
+        @media (max-width: 375px) {
+            text-align: center;
         }
     }
 }
@@ -756,7 +766,7 @@ $colorTransparent: transparent;
         padding: 78px 0;
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 375px) {
         padding: 35px 0;
     }
 
@@ -777,7 +787,7 @@ $colorTransparent: transparent;
             margin-bottom: 26px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             font-size: 18px;
             line-height: 21px;
         }
@@ -796,7 +806,7 @@ $colorTransparent: transparent;
             margin-bottom: 46px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             font-size: 13px;
             line-height: 15px;
             margin-bottom: 15px;
@@ -831,7 +841,7 @@ $colorTransparent: transparent;
             padding: 29px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             max-width: 279px;
         }
     }
@@ -846,7 +856,7 @@ $colorTransparent: transparent;
             padding: 46px 0 43px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             padding: 34px 0;
         }
     }
@@ -860,7 +870,7 @@ $colorTransparent: transparent;
             column-gap: 20px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             flex-direction: column;
             row-gap: 59px;
         }
@@ -869,12 +879,13 @@ $colorTransparent: transparent;
         max-width: 370px;
         width: 100%;
         text-align: center;
+        margin: 0 auto;
 
         @media (max-width: 1024px) {
             max-width: 315px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             max-width: 280px;
 
             &:nth-of-type(1) {
@@ -896,7 +907,7 @@ $colorTransparent: transparent;
             margin-bottom: 17px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             margin-bottom: 34px;
         }
 
@@ -907,7 +918,7 @@ $colorTransparent: transparent;
                 margin-bottom: 32px;
             }
 
-            @media (max-width: 320px) {
+            @media (max-width: 375px) {
                 margin-bottom: 36px;
             }
         }
@@ -935,7 +946,7 @@ $colorTransparent: transparent;
             column-gap: 23px;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 375px) {
             max-width: 132px;
             column-gap: 17px;
         }
@@ -945,30 +956,35 @@ $colorTransparent: transparent;
         width: 39px;
         height: 39px;
 
+        &:hover path {
+            fill: $colorTextBlack;
+        }
+        &:active path {
+            fill: $colorTextLinkActive;
+        }
+
+        &:hover rect {
+            stroke: $colorTextBlack;
+        }
+        &:active rect {
+            stroke: $colorTextLinkActive;
+        }
+
         @media (max-width: 1024px) {
             width: 33px;
             height: 33px;
         }
     }
     &__icon {
-        transition: all 0.3s linear;
-    
+        & path {
+            transition: all 0.3s linear;
+        }
+        & rect {
+            transition: all 0.3s linear;
+        }
         @media (max-width: 1024px) {
             width: 33px;
             height: 33px;
-        }
-
-        &:hover path {
-            fill: $colorText;
-        }
-        &:hover rect {
-            stroke: $colorText;
-        }
-        &:active path {
-            fill: $colorTextBlack;
-        }
-        &:active rect {
-            stroke: $colorTextBlack;
         }
     }
     &__bottom {
@@ -979,7 +995,7 @@ $colorTransparent: transparent;
             padding: 14px 0;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             padding: 29px 0;
         }
     }
@@ -991,7 +1007,7 @@ $colorTransparent: transparent;
             max-width: 314px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 375px) {
             max-width: 280px;
         }
     }

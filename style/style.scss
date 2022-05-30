@@ -18,7 +18,7 @@ $colorBackgroundFooterDark: #2c3154;
 $colorTextFooter: #808080;
 $colorBackgroundBanner: #252b49cc;
 $colorTransparent: transparent;
-$colorLink: rgba(198, 203, 205, 1);
+$colorLink: #c6cbcd;
 
 
 * {
@@ -197,10 +197,11 @@ $colorLink: rgba(198, 203, 205, 1);
         z-index: 2;
         @include container();
         text-align: center;
-
+        /*
         @media (max-width: 375px) {
             max-width: 280px;
         }
+        */
     }
 
     &__title {
@@ -298,7 +299,7 @@ $colorLink: rgba(198, 203, 205, 1);
             column-gap: 20px;
             row-gap: 50px;
         }
-        @media (max-width: 410px) {
+        @media (max-width: 545px) {
             grid-template-columns: 1fr 1fr;
         }
         @media (max-width:375px) {
@@ -595,6 +596,26 @@ $colorLink: rgba(198, 203, 205, 1);
         display: flex;
         justify-content: center;
         align-items: center;
+        border: 1px solid $colorLink;
+        transition: all 0.3s linear;
+        path {
+            transition: all 0.3s linear;
+        }
+
+        &:hover path {
+            fill: $colorTextBlack;
+        }
+
+        &:active path {
+            fill: $colorTextLinkActive;
+        }
+        
+        &:hover  {
+            border: 1px solid $colorTextBlack;
+        }
+        &:active  {
+            border: 1px solid $colorTextLinkActive;
+        }
 
         @media (max-width:1024px) {
             width: 33px;
@@ -607,26 +628,6 @@ $colorLink: rgba(198, 203, 205, 1);
         }
     }
     &__icon {
-        path {
-            transition: all 0.3s linear;
-        }
-        rect {
-            transition: all 0.3s linear;
-        }
-
-        &:hover path {
-            fill: $colorText;
-        }
-        &:hover rect {
-            stroke: $colorText;
-        }
-
-        &:active path {
-            fill: $colorTextBlack;
-        }
-        &:active rect {
-            stroke: $colorTextBlack;
-        }
         @media (max-width: 1024px) {
             width: 33px;
             height: 33px;
@@ -870,7 +871,7 @@ $colorLink: rgba(198, 203, 205, 1);
             column-gap: 20px;
         }
 
-        @media (max-width: 375px) {
+        @media (max-width: 545px) {
             flex-direction: column;
             row-gap: 59px;
         }
@@ -955,20 +956,27 @@ $colorLink: rgba(198, 203, 205, 1);
         display: inline-block;
         width: 39px;
         height: 39px;
+        border: 1px solid $colorLink;
+        transition: all 0.3s linear;
+        path {
+            transition: all 0.3s linear;
+        }
 
         &:hover path {
             fill: $colorTextBlack;
         }
+
         &:active path {
             fill: $colorTextLinkActive;
         }
-
-        &:hover rect {
-            stroke: $colorTextBlack;
+        
+        &:hover  {
+            border: 1px solid $colorTextBlack;
         }
-        &:active rect {
-            stroke: $colorTextLinkActive;
-        }
+        &:active  {
+            border: 1px solid $colorTextLinkActive;
+        } 
+        
 
         @media (max-width: 1024px) {
             width: 33px;
@@ -976,12 +984,6 @@ $colorLink: rgba(198, 203, 205, 1);
         }
     }
     &__icon {
-        & path {
-            transition: all 0.3s linear;
-        }
-        & rect {
-            transition: all 0.3s linear;
-        }
         @media (max-width: 1024px) {
             width: 33px;
             height: 33px;

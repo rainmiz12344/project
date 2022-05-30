@@ -203,12 +203,11 @@
   max-width: 1200px;
   padding: 0 15px;
   text-align: center;
-}
-
-@media (max-width: 375px) {
-  .banner__container {
-    max-width: 280px;
-  }
+  /*
+        @media (max-width: 375px) {
+            max-width: 280px;
+        }
+        */
 }
 
 .banner__title {
@@ -339,7 +338,7 @@
   }
 }
 
-@media (max-width: 410px) {
+@media (max-width: 545px) {
   .features__container {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -748,6 +747,30 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 1px solid #c6cbcd;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.team__link path {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.team__link:hover path {
+  fill: #000;
+}
+
+.team__link:active path {
+  fill: #e71414;
+}
+
+.team__link:hover {
+  border: 1px solid #000;
+}
+
+.team__link:active {
+  border: 1px solid #e71414;
 }
 
 @media (max-width: 1024px) {
@@ -762,32 +785,6 @@
     width: 39.6px;
     height: 39.6px;
   }
-}
-
-.team__icon path {
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-
-.team__icon rect {
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-
-.team__icon:hover path {
-  fill: #6C7279;
-}
-
-.team__icon:hover rect {
-  stroke: #6C7279;
-}
-
-.team__icon:active path {
-  fill: #000;
-}
-
-.team__icon:active rect {
-  stroke: #000;
 }
 
 @media (max-width: 1024px) {
@@ -1125,7 +1122,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 545px) {
   .footer__top-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1241,6 +1238,14 @@
   display: inline-block;
   width: 39px;
   height: 39px;
+  border: 1px solid #c6cbcd;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.footer__link path {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .footer__link:hover path {
@@ -1251,12 +1256,12 @@
   fill: #e71414;
 }
 
-.footer__link:hover rect {
-  stroke: #000;
+.footer__link:hover {
+  border: 1px solid #000;
 }
 
-.footer__link:active rect {
-  stroke: #e71414;
+.footer__link:active {
+  border: 1px solid #e71414;
 }
 
 @media (max-width: 1024px) {
@@ -1264,16 +1269,6 @@
     width: 33px;
     height: 33px;
   }
-}
-
-.footer__icon path {
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-
-.footer__icon rect {
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
 }
 
 @media (max-width: 1024px) {

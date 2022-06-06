@@ -302,7 +302,7 @@ $colorLink: #c6cbcd;
         @media (max-width: 545px) {
             grid-template-columns: 1fr 1fr;
         }
-        @media (max-width:375px) {
+        @media (max-width: 500px) {
             grid-template-columns: 1fr;
             row-gap: 41px;
         }
